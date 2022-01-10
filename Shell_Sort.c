@@ -5,13 +5,13 @@ int main(){
     int count = sizeof(k)/sizeof(int);
     int h = count;
     int j, tmp;
-    if ((h/2) % 2 == 0){
-        h = h/2 + 1;
-    }else{
-        h = h/2;
-    }
+    h = h/2;
 
-    while(h > 1){
+    while(h > 0){
+        if (h % 2 == 0){
+            h = h + 1;
+        }
+        printf("h = %d\n", h);
         for(int i = h; i<count; i++){
             j = i-h;
             if(k[j] > k[j+h]){
@@ -25,14 +25,8 @@ int main(){
             }
             printf("\n");
         }
-        printf("%d\n", h);
-        if ((h/2) % 2 == 0){
-            h = h/2 + 1;
-        }else{
-            h = h/2;
-        }
-        printf("%d\n", h);
-
+        printf("=====================================\n");
+        h = h/2;
     }
 
     for (int i = 0; i<count; i++){
